@@ -1,5 +1,5 @@
 from scipy.optimize import curve_fit
-
+from inspect import signature
 
 class FilterFitter:
 
@@ -9,7 +9,9 @@ class FilterFitter:
 
     def fit(self, x, y, skip=100, method='dogbox', verbose=0):
 
-        N = len(self.a) + len(self.b)
+        sig = signature(self.fil)
+        
+        N = len(sig.parameters)
         p0 = [0.5] * N
 
         def func(x, *params):

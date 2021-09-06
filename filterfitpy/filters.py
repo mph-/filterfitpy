@@ -10,7 +10,7 @@ class Ar0diff(Filter):
 
 class Ar1diff(Filter):
 
-    def __init__(self, a0, b0):
+    def __init__(self, b0, a0):
 
         a = [1, a0]
         b = [b0, -b0]    
@@ -34,7 +34,7 @@ class Ar0ma3(Filter):
 
 class Ar1ma2(Filter):
 
-    def __init__(self, a1, b0, b1):
+    def __init__(self, b0, b1, a1):
 
         a = [1, a1]
         b = [b0, b1]    
@@ -42,7 +42,7 @@ class Ar1ma2(Filter):
 
 class Ar1ma3(Filter):
 
-    def __init__(self, a1, b0, b1, b2):
+    def __init__(self, b0, b1, b2, a1):
 
         a = [1, a1]
         b = [b0, b1, b2]
@@ -50,7 +50,7 @@ class Ar1ma3(Filter):
 
 class Ar1ma4(Filter):
 
-    def __init__(self, a1, b0, b1, b2, b3):
+    def __init__(self, b0, b1, b2, b3, a1):
 
         a = [1, a1]
         b = [b0, b1, b2, b3]
@@ -58,7 +58,7 @@ class Ar1ma4(Filter):
 
 class Ar2diff(Filter):
 
-    def __init__(self, a1, a2, b0):
+    def __init__(self, b0, a1, a2):
 
         a = [1, a1, a2]
         b = [b0, -b0]    
@@ -66,7 +66,7 @@ class Ar2diff(Filter):
 
 class Ar2ma2(Filter):
 
-    def __init__(self, a1, a2, b0, b1):
+    def __init__(self, b0, b1, a1, a2):
 
         a = [1, a1, a2]
         b = [b0, b1]    
@@ -74,7 +74,7 @@ class Ar2ma2(Filter):
 
 class Ar2ma3(Filter):
 
-    def __init__(self, a1, a2, b0, b1, b2):
+    def __init__(self, b0, b1, b2, a1, a2):
 
         a = [1, a1, a2]
         b = [b0, b1, b2]    
