@@ -1,82 +1,81 @@
 from .filter import Filter
 
-class Ar0diff(Filter):
+class AR0Diff(Filter):
 
     def __init__(self, b0):
 
         a = [1]
         b = [b0, -b0]    
-        super(Ar0diff, self).__init__(b, a)
+        super(AR0Diff, self).__init__(b, a)
 
-class Ar1diff(Filter):
+class AR1diff(Filter):
 
     def __init__(self, b0, a0):
 
         a = [1, a0]
         b = [b0, -b0]    
-        super(Ar1diff, self).__init__(b, a)
+        super(AR1diff, self).__init__(b, a)
 
-class Ar0ma2(Filter):
+class AR0MA2(Filter):
 
     def __init__(self, b0, b1):
 
         a = [1]
         b = [b0, b1]    
-        super(Ar0ma2, self).__init__(b, a)
+        super(AR0MA2, self).__init__(b, a)
 
-class Ar0ma3(Filter):
+class AR0MA3(Filter):
 
     def __init__(self, b0, b1, b2):
 
         a = [1]
         b = [b0, b1, b2]    
-        super(Ar0ma3, self).__init__(b, a)
+        super(AR0MA3, self).__init__(b, a)
 
-class Ar1ma2(Filter):
+class AR1MA2(Filter):
 
     def __init__(self, b0, b1, a1):
 
         a = [1, a1]
         b = [b0, b1]    
-        super(Ar1ma2, self).__init__(b, a)
+        super(AR1MA2, self).__init__(b, a)
 
-class Ar1ma3(Filter):
+class AR1MA3(Filter):
 
     def __init__(self, b0, b1, b2, a1):
 
         a = [1, a1]
         b = [b0, b1, b2]
-        super(Ar1ma3, self).__init__(b, a)
+        super(AR1MA3, self).__init__(b, a)
 
-class Ar1ma4(Filter):
+class AR1MA4(Filter):
 
     def __init__(self, b0, b1, b2, b3, a1):
 
         a = [1, a1]
         b = [b0, b1, b2, b3]
-        super(Ar1ma4, self).__init__(b, a)
+        super(AR1MA4, self).__init__(b, a)
 
-class Ar2diff(Filter):
+class AR2diff(Filter):
 
     def __init__(self, b0, a1, a2):
 
         a = [1, a1, a2]
         b = [b0, -b0]    
-        super(Ar2diff, self).__init__(b, a)
+        super(AR2diff, self).__init__(b, a)
 
-class Ar2ma2(Filter):
+class AR2MA2(Filter):
 
     def __init__(self, b0, b1, a1, a2):
 
         a = [1, a1, a2]
         b = [b0, b1]    
-        super(Ar2ma2, self).__init__(b, a)
+        super(AR2MA2, self).__init__(b, a)
 
-class Ar2ma3(Filter):
+class AR2MA3(Filter):
 
     def __init__(self, b0, b1, b2, a1, a2):
 
         a = [1, a1, a2]
         b = [b0, b1, b2]    
-        super(Ar2ma3, self).__init__(b, a)
-        
+        super(AR2MA3, self).__init__(b, a)

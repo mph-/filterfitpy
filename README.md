@@ -18,15 +18,14 @@ Usage
 ``` python
 from numpy import zeros, cos, arange, pi
 
-from .filters import Ar1diff
-from .filterfitter import FilterFitter
+from filterfitpy import AR1MA2, FilterFitter
 
-fitter = FilterFitter(Ar1diff)
+fitter = FilterFitter(AR1MA2)
 
 t = arange(200)
 x = cos(2 * pi * 5 * t / 400)
 
-fil = Ar1diff(2, 0.4)
+fil = AR1MA2(2, 0.4, -0.04)
 
 y = fil(x)
 
