@@ -23,7 +23,9 @@ class FilterFitter:
 
         return self.fil(*params)
 
-        
+    def __call__(self, x, y, skip=100, method='dogbox', verbose=0):
+
+        return self.fit(x, y, skip=100, method='dogbox', verbose=0)
 
         
         
