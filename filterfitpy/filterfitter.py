@@ -34,7 +34,7 @@ class FilterFitter:
         return fil
 
         
-def filterfitter(filterclass, x, y, skip=None, method='dogbox', verbose=0, oversample=1, p0=None, **kwargs):
+def filterfit(filterclass, x, y, skip=None, method='dogbox', verbose=0, oversample=1, p0=None, **kwargs):
 
     fitter = FilterFitter(filterclass)
 

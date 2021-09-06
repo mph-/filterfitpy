@@ -8,13 +8,13 @@ class AR0Diff(Filter):
         b = [b0, -b0]    
         super(AR0Diff, self).__init__(b, a)
 
-class AR1diff(Filter):
+class AR1Diff(Filter):
 
     def __init__(self, b0, a0):
 
         a = [1, a0]
         b = [b0, -b0]    
-        super(AR1diff, self).__init__(b, a)
+        super(AR1Diff, self).__init__(b, a)
 
 class AR0MA2(Filter):
 
@@ -56,13 +56,13 @@ class AR1MA4(Filter):
         b = [b0, b1, b2, b3]
         super(AR1MA4, self).__init__(b, a)
 
-class AR2diff(Filter):
+class AR2Diff(Filter):
 
     def __init__(self, b0, a1, a2):
 
         a = [1, a1, a2]
         b = [b0, -b0]    
-        super(AR2diff, self).__init__(b, a)
+        super(AR2Diff, self).__init__(b, a)
 
 class AR2MA2(Filter):
 
