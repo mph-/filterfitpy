@@ -1,8 +1,8 @@
-from numpy import mean, sqrt
-from scipy.signal import lfilter
+from numpy import mean, sqrt, pi
+from scipy.signal import lfilter, freqz
 
 class Filter:
-    
+
     def __init__(self, b, a):
         """Create filter from lists of numerator, `n`,
         and denominator, `a`, coefficients."""
@@ -17,11 +17,12 @@ class Filter:
         return y
 
     def __repr__(self):
-        return self.__str__()
+        return self.__class__.__name__ + str(self.params)
 
     def __str__(self):
         return 'b=%s, a=%s' % (self.b, self.a)
 
+    @property
     def params(self):
         """Return tuple of parameters, not including a0=1."""
 
@@ -37,3 +38,8 @@ class Filter:
 
         return rmse
 
+    def DTFT(self, F):
+
+        w, A = freqz(self.b, self.a, pi * F)
+        return A
+    
