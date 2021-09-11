@@ -1,7 +1,7 @@
 Introduction
 ============
 
-This Python module is for fitting filters given the input and output signals.  It is naive but effective.
+This Python module is for fitting parameters to discrete-time linear time-invariant filters given the input and output signals.  It is naive but effective.
 
 
 Installation
