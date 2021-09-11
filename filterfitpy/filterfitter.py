@@ -36,10 +36,17 @@ class FilterFitter:
         
 def filterfit(filterclass, x, y, skip=None, method='dogbox', verbose=0, oversample=1, p0=None, **kwargs):
 
+    
     fitter = FilterFitter(filterclass)
 
+    if skip is None:
+        skip = min(100, len(x) // 4)
+            
     if oversample != 1:
         x = oversample1(x, oversample)
-        y = oversample1(y, oversample)        
+        y = oversample1(y, oversample)
+
+        if skip is not None:
+            skip = skip * oversample
     
     return fitter.fit(x, y, skip=skip, method=method, verbose=verbose, p0=p0, **kwargs)

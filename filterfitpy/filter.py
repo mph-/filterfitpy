@@ -1,5 +1,6 @@
 from numpy import mean, sqrt, pi
 from scipy.signal import lfilter, freqz
+from .oversample import oversample as oversample1
 
 class Filter:
 
@@ -10,9 +11,12 @@ class Filter:
         self.b = b
         self.a = a
 
-    def __call__(self, x):
+    def __call__(self, x, oversample=1):
         """Apply filter."""
 
+        if oversample != 1:
+            x = oversample1(x, oversample)
+        
         y = lfilter(self.b, self.a, x)
         return y
 
@@ -28,12 +32,13 @@ class Filter:
 
         return tuple(self.b + self.a[1:])
     
-    def rmse(self, x, y, skip=100):
+    def rmse(self, x, y, skip=100, oversample=1):
         """Return rms error for y - H * x.
         `skip` is the number of samples to ignore at start
         due to a transient response."""
 
-        yfit = self(x)
+        yfit = self(x, oversample=oversample)
+        skip *= oversample
         rmse = sqrt(mean((yfit[skip:] - y[skip:])**2))
 
         return rmse

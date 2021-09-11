@@ -1,5 +1,13 @@
 from .filter import Filter
 
+class Ideal(Filter):
+
+    def __init__(self):
+
+        a = [1]
+        b = [1]    
+        super(Ideal, self).__init__(b, a)
+
 class AR0Diff(Filter):
 
     def __init__(self, b0):
